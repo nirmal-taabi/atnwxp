@@ -2,7 +2,7 @@
    ATN Worldwide Express – custom stylesheet
    --------------------------------------------------------------------------
    Tailwind utilities are generated in the browser by the Tailwind CDN.
-   Sizing: html { font-size: 62.5% }  ->  1rem = 10px everywhere.
+   Sizing: 1rem = 10px by default, with a slight scale-down on large laptops.
    ========================================================================== */
 @import "./responsiveness/index.css";
 
@@ -32,6 +32,12 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   scroll-padding-top: 8rem;
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  html {
+    font-size: 59.375%;
+  }
 }
 
 body {

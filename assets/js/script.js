@@ -28,12 +28,11 @@
   function runScrollTasks() { ticking = false; scrollTasks.forEach((fn) => fn(window.scrollY)); }
   function requestScroll() { if (!ticking) { ticking = true; requestAnimationFrame(runScrollTasks); } }
 
-  /* ---------- Header: transparent -> solid, drawer, progress bar ---------- */
+  /* ---------- Header: transparent -> solid, drawer ---------- */
   function initHeader() {
     const header = $('#site-header');
     const toggle = $('#menu-toggle');
     const drawer = $('#nav-drawer');
-    const bar = $('#scroll-progress');
     if (!header) return;
     let drawerOpen = false;
 
@@ -46,10 +45,6 @@
 
     onScrollTask((y) => {
       header.classList.toggle('is-stuck', drawerOpen || y > 8);
-      if (bar) {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.setProperty('--p', max > 0 ? Math.min(y / max, 1).toFixed(4) : 0);
-      }
     });
 
     if (toggle && drawer) {
@@ -84,7 +79,7 @@
     });
   }
 
-  /* ---------- Split headlines into words, footer brand into letters ---------- */
+  /* ---------- Split headlines into words ---------- */
   function initSplit() {
     if (reduceMotion) return;
     $$('[data-split]').forEach((el) => {
@@ -103,28 +98,9 @@
     });
   }
 
-  function initFooterBrand() {
-    const brand = $('[data-brand]');
-    if (!brand) return;
-    const accentWord = brand.dataset.accent || '';
-    const text = brand.textContent.trim();
-    brand.textContent = '';
-    [...text].forEach((ch, i) => {
-      const s = document.createElement('span');
-      s.className = 'ch';
-      s.style.setProperty('--ci', i);
-      s.textContent = ch === ' ' ? '\u00A0' : ch;
-      if (accentWord && text.indexOf(accentWord) >= 0 && i >= text.indexOf(accentWord) && i < text.indexOf(accentWord) + accentWord.length) {
-        s.classList.add('accent-word');
-      }
-      brand.append(s);
-    });
-    brand.setAttribute('aria-label', text);
-  }
-
   /* ---------- Reveal once on scroll ---------- */
   function initReveal() {
-    const targets = $$('[data-anim], [data-split], [data-tracker], [data-stagger], [data-brand]');
+    const targets = $$('[data-anim], [data-split], [data-tracker], [data-stagger]');
     $$('[data-stagger]').forEach((group) => {
       [...group.children].forEach((child, i) => child.style.setProperty('--si', i));
     });
@@ -151,6 +127,79 @@
     if (document.readyState === 'complete') setTimeout(go, 150);
     else window.addEventListener('load', () => setTimeout(go, 150), { once: true });
     setTimeout(go, 800);
+  }
+
+  function initHeroTracking() {
+    const form = $('#hero-track-form');
+    const input = $('#hero-awb');
+    const card = $('.hero-card');
+    if (!form || !input || !card) return;
+
+    const callFab = $('.fab-call');
+    if (callFab && hasIO) {
+      const observer = new IntersectionObserver(([entry]) => {
+        callFab.classList.toggle('is-obscured', entry.isIntersecting);
+      }, { threshold: 0.1 });
+      observer.observe(card);
+    }
+
+    const tabs = $$('.hero-card-tab', card);
+    const panels = tabs.map((tab) => document.getElementById(tab.getAttribute('aria-controls')));
+    const activateTab = (activeTab, moveFocus = false) => {
+      tabs.forEach((tab, index) => {
+        const selected = tab === activeTab;
+        tab.classList.toggle('is-active', selected);
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        panels[index].hidden = !selected;
+      });
+      if (moveFocus) activeTab.focus();
+    };
+
+    tabs.forEach((tab) => tab.addEventListener('click', () => activateTab(tab)));
+    const tabList = $('.hero-card-tabs', card);
+    tabList?.addEventListener('keydown', (event) => {
+      const currentIndex = tabs.indexOf(document.activeElement);
+      if (currentIndex < 0) return;
+      let nextIndex = currentIndex;
+      if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+      else if (event.key === 'Home') nextIndex = 0;
+      else if (event.key === 'End') nextIndex = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      activateTab(tabs[nextIndex], true);
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      input.value = input.value.trim();
+      if (!form.reportValidity()) return;
+
+      window.location.assign(
+        `https://shiptrack.atnwxp.in/viewabstatus/${encodeURIComponent(input.value)}`
+      );
+    });
+
+    const shipForm = $('#hero-ship-form', card);
+    const pinInputs = [$('#hero-pickup-pin', card), $('#hero-delivery-pin', card)];
+    if (!shipForm || pinInputs.some((pin) => !pin)) return;
+
+    pinInputs.forEach((pin) => {
+      pin.pattern = '[A-Za-z0-9][A-Za-z0-9 -]{1,10}[A-Za-z0-9]';
+      pin.minLength = 3;
+      pin.maxLength = 12;
+      pin.inputMode = 'text';
+    });
+
+    shipForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      pinInputs.forEach((pin) => { pin.value = pin.value.trim(); });
+      if (!shipForm.reportValidity()) return;
+
+      const params = new URLSearchParams(new FormData(shipForm));
+      window.location.assign(`${shipForm.action}?${params.toString()}`);
+    });
   }
 
   /* ---------- Parallax (visible elements only) ---------- */
@@ -214,49 +263,6 @@
     });
   }
 
-  /* ---------- Rotating specialities ---------- */
-  function initRotator() {
-    const box = $('#rotator');
-    if (!box || reduceMotion) return;
-    const words = $$('span', box);
-    let i = 0;
-    setInterval(() => {
-      if (document.hidden) return;
-      const prev = words[i];
-      i = (i + 1) % words.length;
-      prev.classList.remove('is-on');
-      prev.classList.add('was');
-      words[i].classList.remove('was');
-      words[i].classList.add('is-on');
-      setTimeout(() => prev.classList.remove('was'), 700);
-    }, 2600);
-  }
-
-  /* ---------- Counters ---------- */
-  function initCounters() {
-    const counters = $$('[data-count]');
-    if (!counters.length) return;
-    const run = (el) => {
-      const target = Number(el.dataset.count);
-      if (reduceMotion) { el.textContent = target; return; }
-      const duration = 1500;
-      const start = performance.now();
-      const tick = (now) => {
-        const p = Math.min((now - start) / duration, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
-    if (!hasIO || reduceMotion) { counters.forEach(run); return; }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) { run(entry.target); io.unobserve(entry.target); }
-      });
-    }, { threshold: 0.6 });
-    counters.forEach((el) => { el.textContent = '0'; io.observe(el); });
-  }
-
   /* ---------- Service quick-nav pills: smooth scroll + flash ---------- */
   function initServiceNav() {
     const pills = $$('.svc-pill');
@@ -310,6 +316,30 @@
     });
     const pickup = $('#p-country');
     if (pickup) pickup.value = 'India';
+  }
+
+  /* ---------- Contact form ---------- */
+  function initContactForm() {
+    const form = $('#contact-form');
+    if (!form) return;
+    const status = $('#contact-form-note');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = String(data.get('Name')).trim();
+      const body = [
+        `Name: ${name}`,
+        `Phone: ${String(data.get('Phone')).trim()}`,
+        `Email: ${String(data.get('Email')).trim()}`,
+        '',
+        'Message:',
+        String(data.get('Message')).trim(),
+      ].join('\n');
+      const subject = encodeURIComponent(`Website enquiry from ${name}`);
+      status.textContent = 'Your email app will open with your message ready to send.';
+      window.location.href = `mailto:info@atnwxp.in?subject=${subject}&body=${encodeURIComponent(body)}`;
+    });
   }
 
   /* ---------- Booking form ---------- */
@@ -451,22 +481,17 @@
     const type = params.get('type');
     if (mode && $(`input[name="Shipment Mode"][value="${mode}"]`)) $(`input[name="Shipment Mode"][value="${mode}"]`).checked = true;
     if (type && $(`input[name="Shipment Type"][value="${type}"]`)) $(`input[name="Shipment Type"][value="${type}"]`).checked = true;
-  }
 
-  /* ---------- Contact: copy address ---------- */
-  function initCopyAddress() {
-    const btn = $('#copy-address');
-    const addr = $('#contact-address');
-    if (!btn || !addr) return;
-    btn.addEventListener('click', async () => {
-      const text = addr.innerText.replace(/\n+/g, ' ').trim();
-      try {
-        await navigator.clipboard.writeText(`ATN Worldwide Xpress, ${text}`);
-        toast('Address copied');
-      } catch (err) {
-        toast('Copy not available in this browser');
-      }
-    });
+    const region = params.get('region');
+    const regionField = $('#shipment-region');
+    const pickupPin = params.get('pickupPincode');
+    const deliveryPin = params.get('deliveryPincode');
+    if (region === 'domestic' || region === 'international') {
+      if (regionField) regionField.value = region === 'domestic' ? 'Domestic' : 'International';
+      if (region === 'domestic' && $('#d-country')) $('#d-country').value = 'India';
+    }
+    if (pickupPin && $('#p-postal')) $('#p-postal').value = pickupPin;
+    if (deliveryPin && $('#d-zip')) $('#d-zip').value = deliveryPin;
   }
 
   /* ---------- Back to top with progress ring ---------- */
@@ -498,22 +523,20 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initSplit();
-    initFooterBrand();
     initHeader();
     initScrollSpy();
     initReveal();
     initHero();
+    initHeroTracking();
     initParallax();
     initSpotlight();
     initTilt();
-    initRotator();
-    initCounters();
     initServiceNav();
     initCountries();
+    initContactForm();
     initBookingForm();
     initStepper();
     initPreselect();
-    initCopyAddress();
     initToTop();
     initYear();
     initSvgMotion();

@@ -55,7 +55,7 @@ ATNWXP/
 
 ## Interactions included (assets/js/script.js)
 
-Sticky header with scroll progress bar · mobile drawer · scroll-spy nav · split-text headline reveals · staggered section reveals (IntersectionObserver) · animated counters · hero tilt card · cursor spotlight on feature cards · animated online-tracking timeline · animated pickup-route SVG · pricing bars · partner logo marquee (pause on hover) · footer brand letter reveal + hover sweep · service quick-nav pills with smooth scroll + flash highlight · booking form validation with progress meter, step indicator, mailto submission and success state · back-to-top ring · copy address · auto year.
+Sticky header · mobile drawer · scroll-spy nav · split-text headline reveals · staggered section reveals (IntersectionObserver) · animated counters · hero tilt card · cursor spotlight on feature cards · animated online-tracking timeline · animated pickup-route SVG · pricing bars · partner logo marquee (pause on hover) · footer brand letter reveal + hover sweep · service quick-nav pills with smooth scroll + flash highlight · booking form validation with progress meter, step indicator, mailto submission and success state · back-to-top ring · copy address · auto year.
 
 All motion is disabled automatically for users with `prefers-reduced-motion`.
 

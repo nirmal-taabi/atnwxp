@@ -30,8 +30,8 @@ module.exports = {
         line: 'rgb(var(--c-line) / <alpha-value>)',
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
-        display: ['GoogleSans', 'Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+        display: ['Figtree', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         page: '128rem', // 1280px

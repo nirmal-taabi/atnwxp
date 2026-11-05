@@ -18,6 +18,10 @@
   <meta property="og:url" content="https://atnwxp.in/">
   <meta property="og:image" content="https://atnwxp.in/wp-content/uploads/2024/08/cropped-ATNWXLogoWeb.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/css/output.css">
 
@@ -47,7 +51,10 @@
   <header id="site-header" class="site-header fixed inset-x-0 top-0 z-50">
     <div class="header-bar mx-auto flex max-w-page items-center justify-between gap-4 px-4 sm:px-6 lg:px-10">
       <a href="#home" class="logo-chip shrink-0" aria-label="ATN Worldwide Xpress – home">
-        <img src="assets/images/atn-logo.png" alt="ATN Worldwide Xpress" width="300" height="111">
+        <img class="logo-image logo-image-light" src="assets/images/atn-logo-white.png" alt="ATN Worldwide Xpress"
+          width="300" height="111">
+        <img class="logo-image logo-image-color" src="assets/images/atn-logo.png" alt="" aria-hidden="true"
+          width="300" height="111">
       </a>
 
       <nav aria-label="Primary" class="hidden items-center gap-8 lg:flex">
@@ -60,14 +67,12 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="tel:+919880203123" class="label-tag link-u hidden items-center gap-2 font-medium md:inline-flex"
-          aria-label="Call 9880203123">
-          <svg class="icon-ring" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+        <a href="https://wa.me/919880203123" class="header-whatsapp" target="_blank" rel="noopener noreferrer"
+          aria-label="Message ATN Worldwide Xpress on WhatsApp">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <path fill="#fff" d="M12.04 2C6.58 2 2.14 6.43 2.14 11.89c0 1.75.46 3.46 1.34 4.97L2 22l5.27-1.38a9.9 9.9 0 0 0 4.76 1.22h.01c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.17h-.01a8.24 8.24 0 0 1-4.2-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.22 8.22 0 1 1 7 3.88Z" />
+            <path fill="#25D366" d="M16.56 13.86c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.05-.39-2-.1-.74-.72-1.24-1.61-1.39-1.86-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.87-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.89.87-.89 2.12s.91 2.46 1.04 2.63c.13.17 1.79 2.73 4.33 3.83.61.26 1.08.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.48-.61 1.69-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.17-.49-.3Z" />
           </svg>
-          9880203123
         </a>
         <a href="bookshipment.html" class="nav-cta hidden lg:inline-flex ">
           Book Shipment
@@ -92,10 +97,18 @@
         <a href="#track" class="drawer-link" style="--i:4" data-nav>Track Shipment</a>
         <a href="bookshipment.html" class="drawer-link" style="--i:5" data-nav>Book Shipment</a>
         <a href="#contact" class="drawer-link" style="--i:6" data-nav>Contact</a>
-        <a href="tel:+919880203123" class="drawer-link label-tag" style="--i:7">Call 9880203123</a>
+        <a href="https://wa.me/919880203123" class="drawer-link drawer-whatsapp" style="--i:7"
+          target="_blank" rel="noopener noreferrer" aria-label="Message ATN Worldwide Xpress on WhatsApp">
+          <span class="drawer-whatsapp-content">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path fill="#fff" d="M12.04 2C6.58 2 2.14 6.43 2.14 11.89c0 1.75.46 3.46 1.34 4.97L2 22l5.27-1.38a9.9 9.9 0 0 0 4.76 1.22h.01c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.17h-.01a8.24 8.24 0 0 1-4.2-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.22 8.22 0 1 1 7 3.88Z" />
+              <path fill="#25D366" d="M16.56 13.86c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.05-.39-2-.1-.74-.72-1.24-1.61-1.39-1.86-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.87-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.89.87-.89 2.12s.91 2.46 1.04 2.63c.13.17 1.79 2.73 4.33 3.83.61.26 1.08.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.48-.61 1.69-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.17-.49-.3Z" />
+            </svg>
+            WhatsApp
+          </span>
+        </a>
       </nav>
     </div>
-    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
   </header>
 
   <main id="main">
@@ -116,149 +129,114 @@
       <div
         class="hero-content relative mx-auto grid max-w-page items-center gap-14 px-4 pb-24 sm:px-6 lg:grid-cols-12 lg:gap-8 lg:px-10">
         <div class="hero-copy lg:col-span-7">
-          <p class="hero-fade eyebrow label-tag" style="--d:.35s">Domestic &amp; international logistics</p>
-          <h1 id="hero-title" class="hero-title split mt-6" data-split data-hero>
-            Moving your world, <em>one delivery</em> at a time.
+          <h1 id="hero-title" class="hero-title split" data-split data-hero>
+            Across the street or across the city, we’re here
           </h1>
           <p class="hero-fade mt-7 max-w-2xl text-lg md:text-xl" style="--d:1s">From urgent documents to international
             freight, we help your shipments reach the people and places that matter—safely, promptly and
             cost-effectively.</p>
-          <div class="hero-cta hero-fade mt-10 flex flex-col gap-3 sm:flex-row" style="--d:1.15s">
+          <div class="hero-cta hero-fade mt-10" style="--d:1.15s">
             <a href="bookshipment.html" class="btn btn-solid"><span>Book Shipment</span>
               <svg class="btn-arrow" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </a>
-            <a href="#track" class="btn btn-light"><span>Track Shipment</span></a>
           </div>
         </div>
 
         <div class="hero-fade lg:col-span-5" style="--d:1.3s">
           <div class="hero-card" data-tilt="6">
-            <svg class="hero-badge" viewBox="0 0 100 100" aria-hidden="true">
-              <defs>
-                <path id="badge-arc" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" fill="none" />
-              </defs>
-              <text fill="rgb(255 255 255 / .55)" font-size="9" letter-spacing="3">
-                <textPath href="#badge-arc">ATN WORLDWIDE XPRESS • BANGALORE •</textPath>
-              </text>
-              <circle cx="50" cy="50" r="7" fill="rgb(var(--c-accent))" />
-            </svg>
-            <p class="label-tag flex items-center gap-3"><span class="live-dot"></span> Live network status</p>
-            <div class="mt-4">
-              <div class="hero-card-row">
-                <span class="hero-card-ico">
-                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18" />
-                  </svg>
-                </span>
-                <span>
-                  <span class="block font-display text-xl font-bold">800+ airports</span>
-                  <span class="text-sm opacity-70">connected by air freight</span>
-                </span>
-              </div>
-              <div class="hero-card-row">
-                <span class="hero-card-ico">
-                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z" />
-                    <path d="M3 7.5 12 12l9-4.5M12 12v9" />
-                  </svg>
-                </span>
-                <span>
-                  <span class="block font-display text-xl font-bold">Door-to-door</span>
-                  <span class="text-sm opacity-70">documents, parcels &amp; freight</span>
-                </span>
-              </div>
-              <div class="hero-card-row">
-                <span class="hero-card-ico">
-                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 7v5l3 3" />
-                  </svg>
-                </span>
-                <span>
-                  <span class="block font-display text-xl font-bold">Same-day delivery</span>
-                  <span class="text-sm opacity-70">within the same city</span>
-                </span>
-              </div>
+            <div class="hero-card-tabs" role="tablist" aria-label="Shipment actions">
+              <button class="hero-card-tab is-active" id="hero-track-tab" type="button" role="tab"
+                aria-selected="true" aria-controls="hero-track-panel" tabindex="0">Track order</button>
+              <button class="hero-card-tab" id="hero-ship-tab" type="button" role="tab" aria-selected="false"
+                aria-controls="hero-ship-panel" tabindex="-1">Ship order</button>
             </div>
+
+            <section id="hero-track-panel" class="hero-card-panel" role="tabpanel" aria-labelledby="hero-track-tab"
+              tabindex="0">
+              <h2 class="hero-track-title">Track your order</h2>
+              <form id="hero-track-form" class="hero-track-form" action="https://shiptrack.atnwxp.in/trackab"
+                method="get">
+                <label class="hero-track-label" for="hero-awb">AWB number</label>
+                <input id="hero-awb" class="hero-track-input" type="text" name="url"
+                  placeholder="Enter your AWB Number" autocomplete="off" autocapitalize="characters" spellcheck="false"
+                  required>
+                <button class="btn btn-solid hero-track-submit" type="submit">
+                  <span>Track order</span>
+                  <svg class="btn-arrow" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </button>
+              </form>
+            </section>
+
+            <section id="hero-ship-panel" class="hero-card-panel" role="tabpanel" aria-labelledby="hero-ship-tab"
+              tabindex="0" hidden>
+              <h2 class="hero-track-title">Ship an order</h2>
+              <form id="hero-ship-form" class="hero-track-form" action="bookshipment.html" method="get">
+                <div class="hero-route-fields">
+                  <div class="hero-route-stops" aria-hidden="true">
+                    <span class="hero-route-stop"><span class="hero-route-dot"></span>Origin</span>
+                    <span class="hero-route-connector"></span>
+                    <span class="hero-route-stop"><span class="hero-route-dot hero-route-dot-destination"></span>Destination</span>
+                  </div>
+                  <div class="hero-route-inputs">
+                    <input id="hero-pickup-pin" class="hero-track-input" name="pickupPincode" type="text"
+                      aria-label="Origin postal code" placeholder="Enter origin postal code" autocomplete="postal-code"
+                      inputmode="text" pattern="[A-Za-z0-9][A-Za-z0-9 -]{1,10}[A-Za-z0-9]" minlength="3" maxlength="12"
+                      required>
+                    <input id="hero-delivery-pin" class="hero-track-input" name="deliveryPincode" type="text"
+                      aria-label="Destination postal code" placeholder="Enter destination postal code"
+                      autocomplete="postal-code" inputmode="text"
+                      pattern="[A-Za-z0-9][A-Za-z0-9 -]{1,10}[A-Za-z0-9]" minlength="3" maxlength="12" required>
+                  </div>
+                </div>
+                <button class="btn btn-solid hero-track-submit" type="submit">
+                  <span>Ship now</span>
+                  <svg class="btn-arrow" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </button>
+              </form>
+            </section>
           </div>
         </div>
       </div>
 
-      <div class="relative mx-auto max-w-page px-4 pb-10 sm:px-6 lg:px-10">
-        <div class="scroll-cue" aria-hidden="true">
-          <span class="scroll-cue-bar"></span><span class="label-tag">Scroll to explore</span>
-        </div>
-      </div>
     </section>
 
     <!-- ===== About Us ===== -->
-    <section id="about" class="relative overflow-hidden py-24 lg:py-36" aria-labelledby="about-title">
-      <div class="relative mx-auto grid max-w-page items-center gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-10">
-        <div class="lg:col-span-6" data-anim="up">
-          <p class="eyebrow label-tag">About ATN Worldwide Xpress</p>
-          <h2 id="about-title" class="section-title split mt-4" data-split>About Us</h2>
-          <p class="label-tag mt-6 flex flex-wrap items-center gap-x-3 text-brand">
-            <span class="opacity-70">Our specialities</span>
-            <span class="rotator" id="rotator" aria-hidden="true">
-              <span class="is-on">Document Delivery</span><span>Parcel Delivery</span><span>Air Freight</span><span>Sea
-                Freight</span><span>Freight Forwarding</span>
-            </span>
-          </p>
-          <div class="about-copy mt-7 space-y-4 text-base md:text-lg">
-            <p>ATN Worldwide Xpress is a professionally managed company based out of Bangalore, India which provides
-              courier services that is quick, easy and cost-effective. While ATN has branches spread across all major
-              cities and towns throughout India, its global reach is strengthened by partnering with leading
-              International Courier and Logistics companies like Fedex, DHL, OCS, UPS and TNT enabling ATN to provide
-              services to any part of the globe.</p>
-            <p>ATN Worldwide Xpress serves reputed companies in fulfilling their courier and parcel delivery
-              requirements offering them a reliable, fast and cost-effective service.</p>
-          </div>
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="bookshipment.html" class="btn btn-solid"><span>Book Shipment</span>
-              <svg class="btn-arrow" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
-            <a href="#services" class="btn btn-line"><span>Explore Services</span></a>
-          </div>
-        </div>
-        <figure class="about-visual lg:col-span-6" data-anim="zoom" style="--d:.15s">
-          <img src="assets/images/freight.jpg"
-            alt="Airplane, cargo ship, train and truck representing ATN's freight and courier network"
-            class="about-visual-image" loading="lazy" decoding="async" width="1600" height="800">
-          <span class="about-visual-tag label-tag">From Bangalore to the world</span>
-          <figcaption class="about-visual-caption">
-            <span class="label-tag">One trusted logistics partner</span>
-            <span class="font-display text-2xl font-bold leading-tight sm:text-3xl">Documents, parcels and freight—
-              moving with care.</span>
-          </figcaption>
-        </figure>
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="about-orbit about-orbit--plane" data-parallax="0.1" aria-hidden="true">
+        <img class="about-orbit-art" src="assets/images/Frame-1.svg" alt="" width="480" height="300">
       </div>
-
-      <div class="mx-auto mt-16 max-w-page px-4 sm:px-6 lg:px-10 lg:mt-24">
-
-        <div class="stat-grid flex flex-col justify-between sm:flex-row" data-stagger>
-          <div class="stat-card text-paper">
-            <dd class="stat-num"><span data-count="800">800</span><span class="text-accent">+</span></dd>
-            <dt class="label-tag mt-2 opacity-70">Airports served by air freight</dt>
-          </div>
-          <div class="stat-card text-paper">
-            <dd class="stat-num"><span data-count="200">200</span><span class="text-accent">+</span></dd>
-            <dt class="label-tag mt-2 opacity-70">International ports by sea</dt>
-          </div>
-          <div class="stat-card text-paper">
-            <dd class="stat-num"><span data-count="5">5</span></dd>
-            <dt class="label-tag mt-2 opacity-70">International courier partners</dt>
-          </div>
+      <div class="about-orbit about-orbit--ship" data-parallax="0.07" aria-hidden="true">
+        <img class="about-orbit-art" src="assets/images/Frame-2.svg" alt="" width="480" height="300">
+      </div>
+      <div class="about-orbit about-orbit--truck" aria-hidden="true">
+        <img class="about-orbit-art" src="assets/images/Frame.svg" alt="" width="480" height="300">
+      </div>
+      <div class="about-orbit about-orbit--goods" aria-hidden="true">
+        <img class="about-orbit-art" src="assets/images/Frame-3.svg" alt="" width="480" height="300">
+        <img class="about-orbit-art" src="assets/images/Frame-3.svg" alt="" width="480" height="300">
+        <img class="about-orbit-art" src="assets/images/Frame-3.svg" alt="" width="480" height="300">
+      </div>
+      <div class="about-inner">
+        <h2 id="about-title" class="section-title split about-title" data-split>About Us</h2>
+        <div class="about-copy" data-anim="up">
+          <p class="about-lead">ATN Worldwide Xpress is a professionally managed company based out of Bangalore, India
+            which provides courier services that is <span class="about-highlight">quick, easy and cost-effective</span>.</p>
+          <p class="about-detail">While ATN has branches spread across all major cities and towns throughout India, its
+            global reach is strengthened by partnering with leading International Courier and Logistics companies like
+            Fedex, DHL, OCS, UPS and TNT enabling ATN to provide services to any part of the globe.</p>
+          <p class="about-detail about-detail--closing">ATN Worldwide Xpress serves reputed companies in fulfilling
+            their courier and parcel delivery requirements offering them a reliable, fast and cost-effective service.</p>
         </div>
+        <a href="#services" class="btn btn-line about-action"><span>Explore Services</span></a>
       </div>
     </section>
 
@@ -266,8 +244,7 @@
     <section id="features" class="features relative overflow-hidden py-24 lg:py-36" aria-labelledby="features-title">
       <div class="relative mx-auto max-w-page px-4 sm:px-6 lg:px-10">
         <div class="max-w-3xl" data-anim="up">
-          <p class="eyebrow label-tag">Why ship with ATN</p>
-          <h2 id="features-title" class="section-title split mt-4 text-white" data-split>Everything your shipment
+          <h2 id="features-title" class="section-title split text-white" data-split>Everything your shipment
             needs, in one partner</h2>
           <p class="mt-5 max-w-2xl text-lg text-white/70">Four reasons companies across India trust us with their
             documents, parcels and freight—every single day.</p>
@@ -275,22 +252,12 @@
 
         <div class="feature-grid mt-14" data-stagger>
           <!-- 01 Domestic & International Services -->
-          <article class="feature-card feature-card--wide">
+          <article class="feature-card feature-card--wide feature-card--photo feature-card--global">
             <div class="feature-media" aria-hidden="true">
-              <img src="assets/images/svc-parcel.jpg" alt="" loading="lazy" width="1200" height="900">
+              <img src="assets/images/global-reach.jpg" alt="" loading="lazy" width="2000" height="1333">
             </div>
             <div class="feature-top">
-              <span class="feature-num"><b>01</b> — GLOBAL REACH</span>
-              <span class="feature-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <g class="globe-spin">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M3 12h18" />
-                  </g>
-                  <path d="M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18" />
-                </svg>
-              </span>
+              <span class="feature-label">Global Reach</span>
             </div>
             <h3 class="feature-title">Domestic and International Services</h3>
             <p class="feature-text">With years of experience and knowledge, along with the support of our carefully
@@ -304,14 +271,7 @@
           <!-- 02 Online Tracking -->
           <article class="feature-card feature-card--narrow">
             <div class="feature-top">
-              <span class="feature-num"><b>02</b> — LIVE STATUS</span>
-              <span class="feature-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="7" />
-                  <path d="m20 20-3.5-3.5M11 8v3l2 2" />
-                </svg>
-              </span>
+              <span class="feature-label">Live Status</span>
             </div>
             <h3 class="feature-title">Online Tracking</h3>
             <p class="feature-text">Stay up to date on shipment status from pick-up until successful delivery.</p>
@@ -340,14 +300,7 @@
           <!-- 03 Prompt Pick-Up and Delivery -->
           <article class="feature-card feature-card--narrow">
             <div class="feature-top">
-              <span class="feature-num"><b>03</b> — TIME CRITICAL</span>
-              <span class="feature-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="13" r="8" />
-                  <path d="M12 9v4l2.5 2.5M9 2h6" />
-                </svg>
-              </span>
+              <span class="feature-label">Time Critical</span>
             </div>
             <h3 class="feature-title">Prompt Pick-Up and Delivery</h3>
             <p class="feature-text">Urgent, dedicated and time-critical collection from your booking, delivered
@@ -383,16 +336,12 @@
           </article>
 
           <!-- 04 Competitive Pricing -->
-          <article class="feature-card feature-card--wide">
+          <article class="feature-card feature-card--wide feature-card--photo feature-card--value">
+            <div class="feature-media" aria-hidden="true">
+              <img src="assets/images/value-for-money.jpg" alt="" loading="lazy" width="2000" height="1333">
+            </div>
             <div class="feature-top">
-              <span class="feature-num"><b>04</b> — VALUE FOR MONEY</span>
-              <span class="feature-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z" />
-                  <circle cx="7.5" cy="7.5" r="1.2" fill="currentColor" stroke="none" />
-                </svg>
-              </span>
+              <span class="feature-label">Value for Money</span>
             </div>
             <h3 class="feature-title">Competitive Pricing</h3>
             <p class="feature-text">ATN Express Worldwide offers flexible and economical pricing plans for both
@@ -425,8 +374,7 @@
       <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-10">
         <div class="flex flex-wrap items-end justify-between gap-8" data-anim="up">
           <div class="max-w-3xl">
-            <p class="eyebrow label-tag">What we move</p>
-            <h2 id="services-title" class="section-title split mt-4" data-split>Express delivery services built
+            <h2 id="services-title" class="section-title split" data-split>Express delivery services built
               around you</h2>
           </div>
           <nav class="svc-nav" aria-label="Jump to a service">
@@ -444,8 +392,6 @@
               <img src="assets/images/svc-parcel.jpg" alt="Courier handing a sealed parcel and document envelope to a
                 customer" loading="lazy" decoding="async" width="1200" height="900">
             </div>
-            <span class="svc-num" aria-hidden="true">01</span>
-            <span class="svc-stat"><b>Low-cost</b>, high-quality</span>
             <div class="svc-body">
               <span class="svc-icon">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -484,11 +430,9 @@
           <!-- 02 Air Freight -->
           <article id="svc-air" class="svc-card svc-card--b" data-anim="rise" style="--d:.1s">
             <div class="svc-media">
-              <img src="assets/images/svc-air.jpg" alt="Cargo aircraft being loaded with freight at dusk" loading="lazy"
-                decoding="async" width="1200" height="900">
+              <img src="assets/images/aircargo.jpg" alt="Air freight cargo being loaded onto an aircraft at an airport"
+                loading="lazy" decoding="async" width="2000" height="1500">
             </div>
-            <span class="svc-num" aria-hidden="true">02</span>
-            <span class="svc-stat"><b>800+</b> airports</span>
             <div class="svc-body">
               <span class="svc-icon">
                 <svg class="svc-icon-anim-plane" aria-hidden="true" viewBox="0 0 24 24" fill="none"
@@ -526,11 +470,9 @@
           <!-- 03 Sea Freight -->
           <article id="svc-sea" class="svc-card svc-card--c" data-anim="rise">
             <div class="svc-media">
-              <img src="assets/images/svc-sea.jpg" alt="Container ship crossing the ocean at sunset" loading="lazy"
-                decoding="async" width="1200" height="900">
+              <img src="assets/images/seafrieght.jpg" alt="Port cranes loading shipping containers at a harbor"
+                loading="lazy" decoding="async" width="2000" height="1500">
             </div>
-            <span class="svc-num" aria-hidden="true">03</span>
-            <span class="svc-stat"><b>200+</b> ports</span>
             <div class="svc-body">
               <span class="svc-icon">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -572,8 +514,6 @@
               <img src="assets/images/svc-forwarding.jpg" alt="Freight forwarding agent with a tablet at a loading
                 dock" loading="lazy" decoding="async" width="1200" height="900">
             </div>
-            <span class="svc-num" aria-hidden="true">04</span>
-            <span class="svc-stat"><b>End-to-end</b> handling</span>
             <div class="svc-body">
               <span class="svc-icon">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -648,8 +588,7 @@
     <!-- ===== Partners ===== -->
     <section id="partners" class="relative overflow-hidden bg-white py-20 lg:py-28" aria-labelledby="partners-title">
       <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-10" data-anim="up">
-        <p class="eyebrow label-tag">Trusted network</p>
-        <h2 id="partners-title" class="section-title split mt-3" data-split>Our International Partners</h2>
+        <h2 id="partners-title" class="section-title split" data-split>Our International Partners</h2>
       </div>
       <div class="marquee mt-10" aria-label="International courier partners">
         <div class="marquee-track">
@@ -672,46 +611,114 @@
     </section>
 
     <!-- ===== Contact ===== -->
-    <section id="contact" class="py-24 lg:py-36" aria-labelledby="contact-title">
-      <div class="mx-auto grid max-w-page gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:px-10">
-        <div class="lg:col-span-5" data-anim="up">
-          <p class="eyebrow label-tag">Get in touch</p>
-          <h2 id="contact-title" class="section-title split mt-4" data-split>Contact</h2>
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-10">
+        <div class="grid gap-14 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5" data-anim="up">
+            <h2 id="contact-title" class="section-title split" data-split>Contact</h2>
 
-          <address class="mt-8 not-italic">
-            <p id="contact-address" class="text-lg">#42, 1st Main Road, 12th 'A' Cross,<br>Sampangiram
-              Nagar,<br>Bangalore
-              – 560 027</p>
-            <dl class="mt-8 divide-y divide-line border-y border-line">
-              <div class="contact-row">
-                <dt class="label-tag">Phone</dt>
-                <dd class="text-lg font-semibold"><a href="tel:+918041323634" class="link-u">080 – 4132 3634</a></dd>
-              </div>
-              <div class="contact-row">
-                <dt class="label-tag">Mobile</dt>
-                <dd class="text-lg font-semibold"><a href="tel:+919880203123" class="link-u">98802 03123</a></dd>
-              </div>
-              <div class="contact-row">
-                <dt class="label-tag">Email</dt>
-                <dd class="break-all text-lg font-semibold"><a href="mailto:info@atnwxp.in"
-                    class="link-u">info@atnwxp.in</a></dd>
-              </div>
-            </dl>
-          </address>
+            <address class="mt-8 not-italic">
+              <p id="contact-address" class="text-lg">#42, 1st Main Road, 12th 'A' Cross,<br>Sampangiram
+                Nagar,<br>Bangalore – 560 027</p>
+              <dl class="contact-details mt-10">
+                <div class="contact-detail">
+                  <dt class="contact-detail-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+                    </svg>
+                  </dt>
+                  <dd>
+                    <span class="contact-detail-label">Phone</span>
+                    <a href="tel:+918041323634" class="contact-detail-value">080 – 4132 3634</a>
+                  </dd>
+                </div>
+                <div class="contact-detail">
+                  <dt class="contact-detail-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="7" y="2" width="10" height="20" rx="2" />
+                      <path d="M11 18h2" />
+                    </svg>
+                  </dt>
+                  <dd>
+                    <span class="contact-detail-label">Mobile</span>
+                    <a href="tel:+919880203123" class="contact-detail-value">98802 03123</a>
+                  </dd>
+                </div>
+                <div class="contact-detail">
+                  <dt class="contact-detail-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-10 6L2 7" />
+                    </svg>
+                  </dt>
+                  <dd>
+                    <span class="contact-detail-label">Email</span>
+                    <a href="mailto:info@atnwxp.in" class="contact-detail-value">info@atnwxp.in</a>
+                  </dd>
+                </div>
+              </dl>
+            </address>
+          </div>
 
-          <div class="contact-actions mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="tel:+919880203123" class="btn btn-solid"><span>Call now</span></a>
-            <button type="button" id="copy-address" class="btn btn-line"><span>Copy address</span></button>
+          <div class="lg:col-span-7" data-anim="zoom" style="--d:.15s">
+            <h3 class="contact-form-title">Send us a message</h3>
+            <form id="contact-form" class="contact-form mt-7" action="mailto:info@atnwxp.in" method="post"
+              enctype="text/plain">
+              <div class="contact-form-grid">
+                <div>
+                  <label class="field-label" for="contact-name">Name <span aria-hidden="true">*</span></label>
+                  <input class="field" id="contact-name" name="Name" type="text" autocomplete="name" required>
+                </div>
+                <div>
+                  <label class="field-label" for="contact-phone">Phone <span aria-hidden="true">*</span></label>
+                  <input class="field" id="contact-phone" name="Phone" type="tel" autocomplete="tel" required>
+                </div>
+                <div class="contact-form-full">
+                  <label class="field-label" for="contact-email">Email <span aria-hidden="true">*</span></label>
+                  <input class="field" id="contact-email" name="Email" type="email" autocomplete="email" required>
+                </div>
+                <div class="contact-form-full">
+                  <label class="field-label" for="contact-message">Message <span aria-hidden="true">*</span></label>
+                  <textarea class="field contact-message" id="contact-message" name="Message" rows="5"
+                    required></textarea>
+                </div>
+              </div>
+              <button class="btn btn-solid contact-submit mt-7" type="submit">
+                <span>Submit</span>
+                <svg class="btn-arrow" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </button>
+              <p id="contact-form-note" class="contact-form-note mt-4" role="status" aria-live="polite"></p>
+            </form>
           </div>
         </div>
 
-        <div class="lg:col-span-7" data-anim="zoom" style="--d:.15s">
-          <div class="map-wrap">
-            <div class="map-layer" aria-hidden="true"></div>
-            <div class="map-frame">
-              <iframe title="Map showing the ATN Worldwide Xpress office in Sampangiram Nagar, Bangalore" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://maps.google.com/maps?q=Sampangiram%20Nagar%2C%20Bangalore%20560027&amp;output=embed"></iframe>
+      </div>
+      <div class="contact-map" data-anim="zoom">
+        <div class="map-wrap">
+          <div class="map-frame">
+            <iframe title="Map showing the ATN Worldwide Xpress office in Sampangiram Nagar, Bangalore" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Sampangiram%20Nagar%2C%20Bangalore%20560027&amp;output=embed"></iframe>
+            <div class="map-location-card">
+              <div>
+                <span class="map-location-name">ATN Worldwide Xpress</span>
+                <p class="map-location-address">#42, 1st Main Road, 12th 'A' Cross, Sampangiram Nagar, Bangalore – 560 027</p>
+              </div>
+              <a class="map-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sampangiram%20Nagar%2C%20Bangalore%20560027"
+                target="_blank" rel="noopener noreferrer">
+                Directions
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 17 7M7 7h10v10" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -725,18 +732,11 @@
       <div class="footer-grid grid gap-12 pb-16 md:grid-cols-2 lg:grid-cols-12">
         <div class="footer-about lg:col-span-5">
           <a href="#home" class="footer-logo" aria-label="ATN Worldwide Xpress – back to top of page">
-            <img src="assets/images/atn-logo-footer.png" alt="ATN Worldwide Xpress" loading="lazy" width="300"
+            <img src="assets/images/atn-logo-white.png" alt="ATN Worldwide Xpress" loading="lazy" width="300"
               height="111">
           </a>
           <p class="mt-6 max-w-md text-base">A professionally managed courier company based in Bangalore—quick, easy
             and cost-effective document, parcel and freight delivery across India and the globe.</p>
-          <p class="mt-6 label-tag flex flex-wrap items-center gap-x-3 text-accent">
-            <span class="opacity-70">Specialities</span>
-            <span class="rotator" aria-hidden="true">
-              <span class="is-on">Document Delivery</span><span>Parcel Delivery</span><span>Air Freight</span><span>Sea
-                Freight</span>
-            </span>
-          </p>
         </div>
 
         <nav class="lg:col-span-2" aria-label="Footer – quick links">
@@ -779,8 +779,6 @@
         </div>
       </div>
 
-      <a href="#home" class="footer-brand" data-brand data-accent="Xpress" aria-label="ATN Worldwide Xpress – back to
-        top">ATN Worldwide Xpress</a>
       <p class="footer-mark mt-10" aria-hidden="true">ATN WORLDWIDE XPRESS</p>
     </div>
 

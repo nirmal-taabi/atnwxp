@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Responsive layer – tablet, mobile and small-screen corrections.
+   Desktop/base rules live in ../style.css. Only breakpoint overrides here.
+   Targets: 1023 / 767 / 639 / 479 / 359 (+ min-width tweaks)
+   ========================================================================== */
+
+/* ---------- Tablet and below ---------- */
+@media (max-width: 1023px) {
+  .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; }
+  .step-label { display: none; }
+  .step-title { font-size: 1.3rem; min-height: 0; }
+  .step-dot { width: 4.8rem; height: 4.8rem; font-size: 1.6rem; }
+
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .footer-grid .footer-about { grid-column: 1 / -1; }
+
+  .stat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 1.2rem !important; }
+  .stat-num { font-size: 4rem; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+  html { scroll-padding-top: 7rem; }
+  .header-bar { padding-block: 1.2rem; }
+
+  /* Hero */
+  .hero-content { padding-block: 4rem; }
+  .hero-media::after { content: ""; position: absolute; inset: 0; background: rgb(var(--c-ink) / .35); }
+  .hero-card { margin-top: 1rem; max-width: 44rem; }
+  .hero-badge { display: none; }
+
+  /* About */
+  .about-visual { min-height: 0; }
+  .about-visual-caption { right: 1.6rem; bottom: 1.6rem; left: 1.6rem; }
+  .stat-grid { grid-template-columns: 3fr !important; }
+  .stat-card { padding: 2.2rem 2rem; }
+  .stat-num { font-size: 4.4rem; }
+
+  /* Features – one consistent card stack */
+  .feature-grid { gap: 1.6rem; }
+  .feature-card { min-height: 0; padding: 2.4rem 2rem; }
+  .feature-icon { width: 5.6rem; height: 5.6rem; }
+  .feature-title { font-size: 2.4rem; }
+  .feature-text { font-size: 1.5rem; }
+  .feature-visual { padding-top: 2rem; }
+  .tracker { padding: 1.6rem; }
+  .node .label-tag { font-size: .95rem; }
+  .price-bars { height: 9rem; gap: .8rem; }
+
+  /* Services */
+  .svc-grid { gap: 1.8rem; }
+  .svc-card { border-radius: 2rem; }
+  .svc-media { aspect-ratio: 16 / 11; }
+  .svc-body { padding: 2.4rem 2rem 2.8rem; }
+  .svc-title { font-size: 2.4rem; }
+  .svc-card--feature .svc-title { font-size: 2.8rem; }
+  .svc-card--feature { min-height: 0; }
+  .svc-card--feature .svc-body { padding-top: 22rem; }
+  .svc-num { left: 1.6rem; top: 1.6rem; width: 4.4rem; height: 4.4rem; font-size: 1.4rem; }
+  .svc-stat { right: 1.6rem; top: 1.6rem; }
+  .svc-icon { width: 5.6rem; height: 5.6rem; margin-top: -5.6rem; margin-bottom: 1.6rem; }
+  .svc-actions .btn { width: 100%; }
+  .svc-pill { padding: .8rem 1.4rem; font-size: 1.3rem; }
+
+  /* Track band */
+  .track-band .btn { width: 100%; }
+
+  /* Partners */
+  .partner-logo { width: 16rem; height: 9.6rem; padding: 1.4rem 2rem; }
+  .partner-logo img { max-height: 5.2rem; }
+
+  /* Contact */
+  .contact-row { padding-block: 1.2rem; }
+  .map-wrap { padding: 0 1rem 1rem 0; }
+  .map-layer { left: 1rem; top: 1rem; }
+  .map-frame { min-height: 30rem; }
+  .map-frame iframe { min-height: 30rem; }
+  .contact-actions .btn { width: 100%; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr !important; gap: 3.2rem; }
+  .footer-mark { font-size: min(11vw, 6.4rem); }
+
+  /* Booking */
+  .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .steps-rail { display: none; }
+  .step a { gap: .8rem; }
+  .step-title { display: none; }
+  .form-step { scroll-margin-top: 26rem; padding: 2.4rem 1.8rem; }
+  .form-step-head { margin-bottom: 2rem; }
+  .meter-card { padding: 2rem; }
+  .success { padding: 4.8rem 1.6rem; }
+
+  /* Buttons full-width for primary CTAs */
+  .btn { min-height: 4.8rem; }
+  .hero-cta .btn { flex: 1; }
+}
+
+@media (max-width: 639px) {
+  .feature-top { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.6rem; }
+  .steps-bar { padding: 1.6rem 1.6rem; }
+  .waybill-free { display: none; }
+}
+
+@media (max-width: 479px) {
+  .step-title { display: none; }
+  .svc-tags { display: none; }
+  .partner-logo { width: 13.6rem; height: 8.4rem; }
+  .stat-num { font-size: 3.8rem; }
+}
+
+@media (max-width: 359px) {
+  html { font-size: 57.5%; } /* keep 1rem ≈ 9.2px on very narrow devices */
+  .logo-chip img { height: 3rem; }
+}

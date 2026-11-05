@@ -23,7 +23,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="assets/css/output.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --breakpoint-xs: 390px;
+      --breakpoint-sm: 640px;
+      --breakpoint-md: 768px;
+      --breakpoint-lg: 1024px;
+      --breakpoint-xl: 1280px;
+      --breakpoint-2xl: 1440px;
+
+      --spacing: 0.4rem;
+      --text-xs: 1.2rem;
+      --text-xs--line-height: 1.6rem;
+      --text-sm: 1.4rem;
+      --text-sm--line-height: 2rem;
+      --text-base: 1.6rem;
+      --text-base--line-height: 2.4rem;
+      --text-lg: 1.8rem;
+      --text-lg--line-height: 2.8rem;
+      --text-xl: 2rem;
+      --text-xl--line-height: 2.8rem;
+      --text-2xl: 2.4rem;
+      --text-2xl--line-height: 3.2rem;
+      --text-3xl: 3rem;
+      --text-3xl--line-height: 3.6rem;
+      --text-4xl: 3.6rem;
+      --text-4xl--line-height: 4rem;
+      --text-5xl: 4.8rem;
+      --text-5xl--line-height: 1;
+      --text-6xl: 6rem;
+      --text-6xl--line-height: 1;
+      --text-7xl: 7.2rem;
+      --text-7xl--line-height: 1;
+
+      --container-md: 44.8rem;
+      --container-lg: 51.2rem;
+      --container-xl: 57.6rem;
+      --container-2xl: 67.2rem;
+      --container-3xl: 76.8rem;
+      --container-4xl: 89.6rem;
+      --container-page: 128rem;
+
+      --radius-sm: 0.4rem;
+      --radius-md: 0.6rem;
+      --radius-lg: 0.8rem;
+      --radius-xl: 1.2rem;
+      --radius-2xl: 1.6rem;
+      --radius-3xl: 2.4rem;
+
+      --color-ink: rgb(var(--c-ink));
+      --color-brand: rgb(var(--c-brand));
+      --color-accent: rgb(var(--c-accent));
+      --color-paper: rgb(var(--c-paper));
+      --color-line: rgb(var(--c-line));
+      --font-sans: "Figtree", system-ui, sans-serif;
+      --font-display: "Figtree", system-ui, sans-serif;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <script type="application/ld+json">
   {

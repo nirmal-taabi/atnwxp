@@ -1,22 +1,18 @@
 # ATN Worldwide Xpress – website
 
-Standalone website built with **HTML5 + Tailwind CSS v4 + custom CSS3 + vanilla JavaScript (ES6+)**. No frameworks, no jQuery, no CDN.
+Standalone website built with **HTML5 + Tailwind CSS v4 CDN + custom CSS3 + vanilla JavaScript (ES6+)**. No framework or local build tools required.
 
 ## Quick start
 
-```bash
-npm install        # installs Tailwind CSS v4 (dev dependency only)
-npm run build      # compiles assets/css/style.css -> assets/css/output.css (minified)
-npm run watch      # rebuilds automatically while you edit
+Tailwind utilities are generated in the browser from the classes in each HTML page. The pages load the Tailwind CSS v4 browser CDN and the shared custom stylesheet at `assets/css/style.css`. An internet connection is required for the Tailwind CDN and Google Fonts.
+
+Open `index.html` in a browser, or use Python to serve the folder locally:
+
+```powershell
+python -m http.server 8000
 ```
 
-Then open `index.html` in a browser, or serve the folder with any static server:
-
-```bash
-npx serve .        # or: python3 -m http.server
-```
-
-Always link `assets/css/output.css` (the compiled file) in HTML — never `style.css` directly.
+Then visit `http://localhost:8000`.
 
 ## Folder structure
 
@@ -24,15 +20,12 @@ Always link `assets/css/output.css` (the compiled file) in HTML — never `style
 ATNWXP/
 ├── index.html                  Home page (single-page sections)
 ├── bookshipment.html           Booking page (4-step form)
-├── tailwind.config.js          Tailwind theme (colors, fonts, breakpoints) – loaded via @config
-├── package.json / package-lock.json
 ├── README.md
 └── assets/
     ├── css/
-    │   ├── style.css           Tailwind entry + design tokens + shared components + animations
+    │   ├── style.css           Design tokens + shared components + animations
     │   ├── responsiveness/
     │   │   └── index.css       Tablet / mobile / small-screen corrections
-    │   └── output.css          Compiled by Tailwind (generated, linked by every page)
     ├── images/                 Logos, partner logos, hero + service photos, favicon
     ├── fonts/
     │   ├── Poppins/            Poppins 400–900 (self-hosted, primary font)
@@ -44,7 +37,7 @@ ATNWXP/
 
 ## Design system
 
-- **Root size:** `html { font-size: 62.5% }` → **1rem = 10px**. Tailwind spacing/typography tokens are re-based in `assets/css/style.css` (`@theme`) so utilities keep their original pixel size (`p-4` = 16px, `text-lg` = 18px).
+- **Root size:** `html { font-size: 62.5% }` → **1rem = 10px**. Tailwind spacing, typography and breakpoints are configured in each page's inline `@theme` block; utility colors reference the shared variables in `assets/css/style.css`.
 - **Brand colors** (edit once in `:root` of `assets/css/style.css`):
   - `--c-ink: 17 17 17` (dark)
   - `--c-brand / --c-accent: 237 28 36` (brand red)
